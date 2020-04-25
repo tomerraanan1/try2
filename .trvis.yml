@@ -1,0 +1,11 @@
+sudo: required
+servicees:
+    - docker
+
+before_install:
+    - docker build -t tomerraanan1/try2 -f Dockerfile.dev .
+
+scripts:
+    - docker run tomerraanan1/try2 npm run test -- --coverage
+
+
